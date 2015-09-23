@@ -2,7 +2,12 @@
   "name": "language-logtalk",
   "version": "0.1.0",
   "description": "Logtalk language support in Atom",
-  "keywords": [],
+  "keywords": [
+    "logtalk",
+    "prolog",
+    "grammar",
+    "syntax"
+  ],
   "repository": "https://github.com/koryonik/language-logtalk",
   "license": "MIT",
   "engines": {
