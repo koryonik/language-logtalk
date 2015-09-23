@@ -4,7 +4,7 @@
   "description": "Logtalk language support in Atom",
   "keywords": [
   ],
-  "repository": "https://github.com/atom/language-logtalk",
+  "repository": "https://github.com/koryonik/language-logtalk",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
