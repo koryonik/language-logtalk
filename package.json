@@ -1,7 +1,7 @@
 {
   "name": "language-logtalk",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Logtalk language support in Atom",
   "keywords": [
   ],
   "repository": "https://github.com/atom/language-logtalk",
