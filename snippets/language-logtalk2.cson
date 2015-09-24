@@ -1,0 +1,437 @@
+".source.logtalk":
+  "    Category with protocol":
+    prefix: "category"
+    body: '''
+      
+      :- category(${1:Category},
+      	implements(${2:Protocol})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_category.
+      
+    '''
+  Category:
+    prefix: "category"
+    body: '''
+      
+      :- category(${1:Category}).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${2:Description}'
+      	]).
+      
+      $0
+      
+      :- end_category.
+      
+    '''
+  "    Class with all":
+    prefix: "class"
+    body: '''
+      
+      :- object(${1:Class},
+      	implements(${2:Protocol}),
+      	imports(${3:Category}),
+      	instantiates(${4:Metaclass}),
+      	specializes(${5:Superclass})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${6:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Class with category":
+    prefix: "class"
+    body: '''
+      
+      :- object(${1:Class},
+      	imports(${2:Category}),
+      	specializes(${3:Superclass})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${4:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Class with metaclass":
+    prefix: "class"
+    body: '''
+      
+      :- object(${1:Class},
+      	instantiates(${2:Metaclass}),
+      	specializes(${3:Superclass})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${4:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Class with protocol":
+    prefix: "class"
+    body: '''
+      
+      :- object(${1:Class},
+      	implements(${2:Protocol}),
+      	specializes(${3:Superclass})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${4:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  Class:
+    prefix: "class"
+    body: '''
+      
+      :- object(${1:Class},
+      	specializes(${2:Superclass})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Complementing category":
+    prefix: "category"
+    body: '''
+      
+      :- category(${1:Category},
+      	complements(${2:Object})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_category.
+      
+    '''
+  "    Extended category":
+    prefix: "category"
+    body: '''
+      
+      :- category(${1:ExtendedCategory},
+      	extends(${2:MinimalCategory})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_category.
+      
+    '''
+  "    Extended protocol":
+    prefix: "protocol"
+    body: '''
+      
+      :- protocol(${1:Extended},
+      	extends(${2:Minimal})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_protocol.
+      
+    '''
+  "    Instance with all":
+    prefix: "instance"
+    body: '''
+      
+      :- object(${1:Instance},
+      	implements(${2:Protocol}),
+      	imports(${3:Category}),
+      	instantiates(${4:Class})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${5:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Instance with category":
+    prefix: "instance"
+    body: '''
+      
+      :- object(${1:Instance},
+      	imports(${2:Category}),
+      	instantiates(${3:Class})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${4:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Instance with protocol":
+    prefix: "instance"
+    body: '''
+      
+      :- object(${1:Instance},
+      	implements(${2:Protocol}),
+      	instantiates(${3:Class})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${4:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  Instance:
+    prefix: "instance"
+    body: '''
+      
+      :- object(${1:Instance},
+      	instantiates(${2:Class})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    (with no arguments)":
+    prefix: "public"
+    body: '''
+      	:- public(${1:Functor}/0).
+      	:- mode(${1:Functor}, ${2:Solutions}).
+      	:- info(${1:Functor}/0, [
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+    '''
+  "Private predicate":
+    prefix: "private"
+    body: '''
+      	:- private(${1:Functor}/${2:Arity}).
+      	:- mode(${1:Functor}(${3:Arguments}), ${4:Solutions}).
+      	:- info(${1:Functor}/${2:Arity}, [
+      		comment is '${5:Description}',
+      		arguments is ['$6'-'$7']
+      	]).
+      
+      $0
+    '''
+  "Protected predicate":
+    prefix: "protected"
+    body: '''
+      	:- protected(${1:Functor}/${2:Arity}).
+      	:- mode(${1:Functor}(${3:Arguments}), ${4:Solutions}).
+      	:- info(${1:Functor}/${2:Arity}, [
+      		comment is '${5:Description}',
+      		arguments is ['$6'-'$7']
+      	]).
+      
+      $0
+    '''
+  Protocol:
+    prefix: "protocol"
+    body: '''
+      
+      :- protocol(${1:Protocol}).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${2:Description}'
+      	]).
+      
+      $0
+      
+      :- end_protocol.
+      
+    '''
+  "    Prototype with all":
+    prefix: "object"
+    body: '''
+      
+      :- object(${1:Prototype},
+      	implements(${2:Protocol}),
+      	imports(${3:Category}),
+      	extends(${4:Parent})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${5:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Prototype with category":
+    prefix: "object"
+    body: '''
+      
+      :- object(${1:Prototype},
+      	imports(${2:Category})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Prototype with parent":
+    prefix: "object"
+    body: '''
+      
+      :- object(${1:Prototype},
+      	extends(${2:Parent})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "    Prototype with protocol":
+    prefix: "object"
+    body: '''
+      
+      :- object(${1:Prototype},
+      	implements(${2:Protocol})).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${3:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  Prototype:
+    prefix: "object"
+    body: '''
+      
+      :- object(${1:Object}).
+      
+      	:- info([
+      		version is 1.0,
+      		author is '$TM_FULLNAME',
+      		date is `date +%Y/%m/%d`,
+      		comment is '${2:Description}'
+      	]).
+      
+      $0
+      
+      :- end_object.
+      
+    '''
+  "Public predicate":
+    prefix: "public"
+    body: '''
+      	:- public(${1:Functor}/${2:Arity}).
+      	:- mode(${1:Functor}(${3:Arguments}), ${4:Solutions}).
+      	:- info(${1:Functor}/${2:Arity}, [
+      		comment is '${5:Description}',
+      		arguments is ['$6'-'$7']
+      	]).
+      
+      $0
+    '''
